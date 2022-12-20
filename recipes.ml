@@ -185,7 +185,7 @@ let petroleum_gas_cracking =
      5.25 Light Oil requires 5.25 Water to be cracked.
      So the end result is that 0.75 + 5.25 + 5 = 11 Water is required. *)
   res "Petroleum Gas" [ maker "Advanced Oil Processing + Cracking" 1. ] 5.
-    ~count: 90. ~style: Global ~allow_productivity: true
+    ~count: 97.5 ~style: Global ~allow_productivity: true
     [ 100., crude_oil; 110., water ]
 let petroleum_gas = petroleum_gas_basic
 let sulfur =
@@ -198,7 +198,7 @@ let plastic_bar =
   res "Plastic Bar" chemical_plant 1. ~count: 2. ~allow_productivity: true
     [ 1., coal; 20., petroleum_gas ]
 let battery =
-  res "Battery" chemical_plant 5. ~allow_productivity: true
+  res "Battery" chemical_plant 4. ~allow_productivity: true
     [ 1., iron_plate; 1., copper_plate; 20., sulfuric_acid ]
 let iron_stick =
   res "Iron Stick" am1 0.5 ~count: 2. ~allow_productivity: true
@@ -258,7 +258,7 @@ let empty_barrel =
   res "Empty Barrel" am1 1. ~allow_productivity: true
     [ 1., steel_plate ]
 let explosives =
-  res "Explosives" chemical_plant 5. ~count: 2. ~allow_productivity: true
+  res "Explosives" chemical_plant 4. ~count: 2. ~allow_productivity: true
     [ 1., sulfur; 1., coal; 10., water ]
 
 (* Weapons *)
@@ -278,9 +278,6 @@ let poison_capsule =
 let slowdown_capsule =
   res "Slowdown Capsule" am1 8.
     [ 2., steel_plate; 2., electronic_circuit; 5., coal ]
-let atomic_bomb =
-  res "Atomic Bomb" am1 50.
-    [ 10., explosives; 20., processing_unit; 30., uranium_235 ]
 let speed_module =
   res "Speed Module" am1 15.
     [ 5., advanced_circuit; 5., electronic_circuit ]
@@ -582,13 +579,13 @@ let rocket_control_unit =
   res "Rocket Control Unit" am1 30. ~allow_productivity: true
     [ 1., processing_unit; 1., speed_module ]
 let solid_fuel_from_heavy_oil =
-  res "Solid Fuel" chemical_plant 3. ~allow_productivity: true
+  res "Solid Fuel" chemical_plant 2. ~allow_productivity: true
     [ 20., heavy_oil ]
 let solid_fuel_from_light_oil =
-  res "Solid Fuel" chemical_plant 3. ~allow_productivity: true
+  res "Solid Fuel" chemical_plant 2. ~allow_productivity: true
     [ 10., light_oil ]
 let solid_fuel_from_petroleum_gas =
-  res "Solid Fuel" chemical_plant 3. ~allow_productivity: true
+  res "Solid Fuel" chemical_plant 2. ~allow_productivity: true
     [ 20., petroleum_gas ]
 let solid_fuel = solid_fuel_from_petroleum_gas
 let rocket_fuel =
@@ -670,6 +667,11 @@ let power_armor_mk2 =
 
 (* Modular Armor *)
 
+
+let atomic_bomb =
+  res "Atomic Bomb" am1 50.
+    [ 10., explosives; 20., rocket_control_unit; 30., uranium_235 ]
+
 (* night_vision; *)
 let personal_battery =
   res "Personal battery" am1 10.
@@ -693,7 +695,7 @@ let portable_solar_panel =
 
 let portable_fusion_reactor =
   res "Portable fusion reactor" am1 10.
-    [ 250., processing_unit; 50., low_density_structure ]
+    [ 200., processing_unit; 50., low_density_structure ]
 
 let personal_laser_defense =
   res "Personal laser defense" am1 10.
