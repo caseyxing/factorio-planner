@@ -33,6 +33,7 @@ $(CLIENTJS): _build/$(CLIENT)
 	js_of_ocaml _build/$(CLIENT) -o $(CLIENTJS)
 
 _build/$(CLIENT): factorio.ml factoriojs.ml recipes.ml html.ml html.mli
+	eval $(opam config env)
 	$(OCAMLBUILD) $(CLIENT)
 
 clean:

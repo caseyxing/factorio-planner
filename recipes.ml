@@ -402,7 +402,7 @@ let burner_inserter =
   res "Burner Inserter" am1 0.5
     [ 1., iron_plate; 1., iron_gear_wheel ]
 let long_handed_inserter =
-  res "Long Handed Inserter" am1 0.5
+  res "Long-Handed Inserter" am1 0.5
     [ 1., inserter; 1., iron_plate; 1., iron_gear_wheel ]
 let stack_inserter =
   res "Stack Inserter" am1 0.5
